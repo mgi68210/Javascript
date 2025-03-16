@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Style pour les tâches barrées */
+        .barre {
+            text-decoration: line-through; /* Barrer le texte */
+        }
+    </style>
+        <body>
+            <!-- Zone de saisie de la tâche -->
+            <input id="tache" placeholder="Liste de tâches">
+            
+            <!-- Bouton pour ajouter la tâche -->
+            <button onclick="go()">Ajouter</button>
+        
+            <!-- Liste des tâches -->
+            <ol id="res"></ol>
+        
+            <!-- Bouton pour supprimer ou barrer une tâche -->
+            <button onclick="nogo()">Supprimer</button>
+    
+        
+            <script>
+                // Déclaration du tableau qui contiendra les tâches
+                let tab = [];
+        
+                // Fonction pour ajouter une tâche
+                function go() {
+                    // On récupère la valeur de l'input
+                    let t = document.getElementById("tache").value;
+        
+                    // Si l'input n'est pas vide
+                    if (t) {
+                        // On ajoute la tâche dans le tableau avec un état 'barre' à false
+                        tab.push({ text: t, barre: false });
+                    }
+        
+                    // On vide l'input après l'ajout
+                    document.getElementById("tache").value = "";
+        
+                    // On met à jour l'affichage des tâches
+                    let res = document.getElementById("res");
+                    res.innerHTML = "";  // On vide la liste actuelle
+        
+                    // Pour chaque tâche, on l'ajoute dans la liste HTML
+                    for (let i = 0; i < tab.length; i++) {
+                        let li = document.createElement("li");  // Crée un élément <li> pour chaque tâche
+                        li.textContent = tab[i].text;  // Texte de la tâche
+        
+                        // Si la tâche est barrée, on lui ajoute la classe "barre"
+                        if (tab[i].barre) {
+                            li.classList.add("barre");
+                        }
+        
+                        // On ajoute l'élément à la liste
+                        res.appendChild(li);
+                    }
+                }
+        
+                // Fonction pour barrer ou supprimer la dernière tâche
+                function nogo() {
+                    // Si le tableau n'est pas vide
+                    if (tab.length > 0) {
+                        // On prend la dernière tâche
+                        let last = tab[tab.length - 1];
+        
+                        // Si la tâche n'est pas encore barrée
+                        if (!last.barre) {
+                            last.barre = true;  // On la barre
+                        } else {
+                            tab.pop();  // Si elle est déjà barrée, on la supprime
+                        }
+                    }
+        
+                    // On met à jour la liste
+                    go();
+                }
+            </script>
+        </body>
+    </html>

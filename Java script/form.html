@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!DOCTYPE html>
+    <html lang="fr">
+      <head>
+        <meta charset="utf-8">
+        <title>Evénements 4</title>
+       <style>
+
+        td img {
+            width: 100px; /* Taille des miniatures */
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <label for="username">Nom d'utilisateur:</label>
+        <input type="text" id="username">
+        <div id="error-username" class="error"></div>
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" id="email">
+        <div id="error-email" class="error"></div>
+        <br>
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password">
+        <div id="error-password" class="error"></div>
+        <br>
+        <label for="password2">Confirmer le mot de passe:</label>
+        <input type="password" id="password2">
+        <div id="error-password2" class="error"></div>
+        <br>
+        <input type="submit" value="Envoyer">
+    </form>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            validationForm();
+        });
+
+        function validationForm() {
+            let userName = document.getElementById('username').value;
+            let userEmail = document.getElementById('email').value;
+            let userPassword = document.getElementById('password').value;
+            let userPassword2 = document.getElementById('password2').value;
+
+            let errorUsername = document.getElementById('error-username');
+            let errorEmail = document.getElementById('error-email');
+            let errorPassword = document.getElementById('error-password');
+            let errorPassword2 = document.getElementById('error-password2');
+
+            let isValid = true;
+
+            if (userName === "") {
+                errorUsername.innerHTML = "Nom d'utilisateur est obligatoire!";
+                isValid = false;
+            }
+            if (userEmail === "") {
+                errorEmail.innerHTML = "L'email est obligatoire!";
+                isValid = false;
+            } else if (!userEmail.includes("@")) {
+                errorEmail.innerHTML = "L'email doit contenir un '@'";
+                isValid = false;
+            } 
+
+            if (userPassword === "") {
+                errorPassword.innerHTML = "Mot de passe est obligatoire!";
+                isValid = false;
+            } else if (userPassword.length < 6) {
+                errorPassword.innerHTML = "Le mot de passe doit contenir au moins 6 caractères!";
+                isValid = false;
+            } 
+
+            if (userPassword2 === "") {
+                errorPassword2.innerHTML = "Confirmer le mot de passe est obligatoire!";
+                isValid = false;
+            } else if (userPassword2 !== userPassword) {
+                errorPassword2.innerHTML = "Les mots de passe doivent être identiques!";
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert("Formulaire envoyé avec succès!");
+                document.getElementById('myForm').innerHTML="";   
+           
+            }
+        }
+    </script>
+    </html>

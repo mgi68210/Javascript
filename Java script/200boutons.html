@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<STYle>
+    #text{
+        width: 100%; 
+        margin-bottom: 10px;
+    }
+</STYle>
+<body>
+
+
+<input type="text" id="text" readonly><br>  
+<!-- readyonly = L'utilisateur ne peut pas modifier la valeur de ce champ mais voit -->
+
+</body>
+</head>
+<script>
+    function show(n) {
+    document.getElementById("text").value += n + " ";
+}
+
+for (let i = 1; i <= 200; i++) {
+    document.write(`<button onclick="show(${i})">${i}</button>`);
+}
+
+</script>
+
+</html>

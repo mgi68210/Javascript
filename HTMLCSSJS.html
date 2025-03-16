@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio - Mes Compétences</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Manrope', sans-serif;
+            margin: 0; /* Enlever tout écart possible au niveau du body */
+        }
+
+        /* Section Figma */
+        .figma-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .figma-section h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        /* Galerie Figma en flex */
+        .figma-gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px; /* Réduction de l'espace entre les images */
+            max-width: 100%;
+            padding: 10px;
+            flex-wrap: wrap; /* Permet le retour à la ligne si l'écran est trop petit */
+            margin: 0; /* Éviter la marge par défaut autour des éléments */
+        }
+
+        .figma-project {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 220px; /* Taille uniforme des projets */
+            margin: 0; /* On enlève la marge pour un alignement parfait */
+        }
+
+        .figma-project img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .figma-project a {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #945da1;
+            text-decoration: none;
+        }
+
+        .figma-project a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px; /* Un peu de marge autour */
+            background-color: #f8f8f8; /* Ou toute autre couleur de fond que tu souhaites */
+            border-top: 1px solid #ddd; /* Ligne de séparation */
+        }
+
+        footer img {
+            width: 30px; /* Taille du logo réduite à la même taille que les icônes */
+            height: 30px;
+        }
+
+        footer div {
+            display: flex;
+            justify-content: flex-end; /* Aligne les icônes à droite */
+            gap: 20px; /* Espacement entre les icônes */
+        }
+
+        .lien-icone {
+            margin: 0;
+        }
+
+        .lien-icone img {
+            width: 30px; /* Taille des icônes */
+            height: 30px;
+            transition: opacity 0.3s ease;
+        }
+
+        .lien-icone img:hover {
+            opacity: 0.7; /* Légère transparence au survol */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="lien-icone">
+                <img src="images/logo.png" alt="Logo Portfolio">
+            </a>
+            <div>
+                <a href="index.html">Accueil</a>
+                <a href="a-propos.html">À propos</a>
+                <a href="portfolio.html">Portfolio</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Section Figma -->
+    <section class="figma-section">
+        <h2>HTML CSS JS</h2>
+        <div class="figma-gallery">
+            <div class="figma-project">
+                <img src="./Projet figma/Quatrepatte.png" alt="Projet Figma Quatrepatte">
+                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/ECF_Quatre_Pattes/blob/main/index.html" target="_blank">Voir le projet</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <img src="images/logo.png" alt="Logo Robbie Lens">
+        <div>
+            <a target="_blank" href="https://www.linkedin.com/in/marie-gilot-633955136/" class="lien-icone">
+                <img src="./images/linkedin.png" alt="Logo Linkedin">
+            </a>
+            <a target="_blank" href="https://www.instagram.com/artm.gi/" class="lien-icone">
+                <img src="images/instagram.png" alt="Logo Instagram">
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>

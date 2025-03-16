@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<body>
+
+    <!DOCTYPE html>
+    <html lang="fr">
+      <head>
+        <meta charset="utf-8">
+        <title>Evénements 4</title>
+       <style>
+
+        td img {
+            width: 100px; /* Taille des miniatures */
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td colspan="4">
+                <img id="big" height="100" src="./photopourtab/1.jpg" alt="Photo principale">
+            </td>
+        </tr>
+        <tr class="min">
+            <td><img src="./photopourtab/1.jpg" alt="Miniature 1" onclick="ok(this.src)"></td>
+            <td><img src="./photopourtab/2.jpg" alt="Miniature 2" onclick="ok(this.src)"></td>
+            <td><img src="./photopourtab/3.jpg" alt="Miniature 3" onclick="ok(this.src)"></td>
+            <td><img src="./photopourtab/4.jpg" alt="Miniature 4" onclick="ok(this.src)"></td>
+        </tr>
+    </table>
+
+    <script>
+        function ok(image) {
+            document.getElementById("big").setAttribute("src", image);
+        }
+    </script>
+    </html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio - Mes Compétences</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Manrope', sans-serif;
+            margin: 0;
+        }
+
+        /* Section Figma */
+        .figma-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .figma-section h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        /* Galerie Figma en flex pour aligner les projets horizontalement */
+        .figma-gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Espacement entre les projets */
+            flex-wrap: wrap; /* Permet de revenir à la ligne sur les petits écrans */
+            margin: 0; /* Éviter la marge par défaut autour des éléments */
+        }
+
+        .figma-project {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 180px; /* Largeur uniforme pour chaque projet */
+            margin: 0;
+        }
+
+        .figma-project img {
+            width: 180px; /* Fixe la largeur des images à 180px */
+            height: 180px; /* Fixe la hauteur des images à 180px */
+            object-fit: cover; /* Assure que l'image remplit le conteneur sans être déformée */
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .figma-project a {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #945da1;
+            text-decoration: none;
+        }
+
+        .figma-project a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+            border-top: 1px solid #ddd;
+        }
+
+        footer img {
+            width: 30px;
+            height: 30px;
+        }
+
+        footer div {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        .lien-icone {
+            margin: 0;
+        }
+
+        .lien-icone img {
+            width: 30px;
+            height: 30px;
+            transition: opacity 0.3s ease;
+        }
+
+        .lien-icone img:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="lien-icone">
+                <img src="images/logo.png" alt="Logo Portfolio">
+            </a>
+            <div>
+                <a href="index.html">Accueil</a>
+                <a href="a-propos.html">À propos</a>
+                <a href="portfolio.html">Portfolio</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Section javascript -->
+    <section class="figma-section">
+        <h2>HTML CSS</h2>
+        <div class="figma-gallery">
+            <div class="figma-project">
+                <img src="./Java script/java.png" alt="Projet calculette">
+                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/200boutons.html" target="_blank">Voir le projet</a>
+            </div>
+            <div class="figma-project">
+                <img src="./Java script/java.png" alt="Projet Images">
+                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/buttonposition.html" target="_blank">Voir le projet</a>
+            </div>
+            <div class="figma-project">
+                <img src="./Java script/java.png" alt="Projet Confirmation">
+                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/exercice%20BONUS.html" target="_blank">Voir le projet</a>
+            </div>
+            <div class="figma-project">
+                <img src="./Java script/java.png" alt="Projet Form">
+                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/form.html" target="_blank">Voir le projet</a>
+            </div>
+            <div class="figma-project">
+                <img src="./Java script/java.png" alt="Projet List course">
+                <a href="https://html-preview.github.io/?url=http://127.0.0.1:5501/JS/listcourse.html" target="_blank">Voir le projet</a>
+            </div>
+
+            <div class="figma-project">
+                <img src="./Java script/java.png" alt="Projet List taches">
+                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/listtaches.html" target="_blank">Voir le projet</a>
+            </div>
+
+            <div class="figma-project">
+                <img src="./Java script/java.png" alt="Projet photo taches">
+                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/photoposition.html" target="_blank">Voir le projet</a>
+            </div>
+            <div class="figma-project">
+                <img src="./Java script/java.png" alt="Projet prompteur">
+                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/prompteurclick.html" target="_blank">Voir le projet</a>
+            </div>
+            <div class="figma-project">
+                <img src="./Java script/java.png" alt="Projet prompteur">
+                <a href="https://html-preview.github.io/?url=http://127.0.0.1:5501/JS/prompteurtableau.html" target="_blank">Voir le projet</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <img src="images/logo.png" alt="Logo Robbie Lens">
+        <div>
+            <a target="_blank" href="https://www.linkedin.com/in/marie-gilot-633955136/" class="lien-icone">
+                <img src="./images/linkedin.png" alt="Logo Linkedin">
+            </a>
+            <a target="_blank" href="https://www.instagram.com/artm.gi/" class="lien-icone">
+                <img src="images/instagram.png" alt="Logo Instagram">
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+        border-collapse: collapse; /* Fusionne les bordures des cellules */
+        }
+
+        th, td {
+            border: 1px solid black;
+
+        }
+  
+    </style>
+    <body>
+        <h3 align="left">Nom étudiant</h3>
+        <input id="nom" placeholder="Entrez votre nom">
+        <button onclick="ajouter()">Ajouter</button>
+    
+        <table id="tableau">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nom</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ZONE AVEC LES VALEURS AJOUTEES PAR L'ETUDIANT -->
+            </tbody>
+        </table>
+    
+    
+        <script>
+let compteur = 1; // compteur initialisé
+
+function ajouter() {
+    // appelle le texte entré par l'utilisateur
+    let textNom = document.getElementById("nom");
+    let nom = textNom.value;
+
+    // Condition si l'étudiant n'a rien entré
+    if (!nom) {
+        alert("Veuillez entrer un nom !");
+        return;
+    }
+
+    // Appelle le tableau où ajouter la 1ère ligne
+    document.getElementById("tableau").querySelector("tbody");
+
+    // Création d'un tableau; exemple = [1,Alice]
+    let valeurs = [compteur, nom];
+
+    //Création d'une ligne de tableau visible en html
+    let ligneHTML = "<tr>";
+
+    // Boucle for pour pemplir la ligne avec les cellules de données du tableau
+    for (let i = 0; i < valeurs.length; i++) {
+        ligneHTML += `<td>${valeurs[i]}</td>`;
+    }
+
+    ligneHTML += "</tr>"; //ferme  la ligne
+
+    // Ajout de la ligne complète au tableau
+    tableau.innerHTML += ligneHTML;
+
+    // Incrémentation par le compteur pour effectuer la prochaine entrée de l'étudiant
+    compteur++;
+
+    // Après chaque entrée de l'étudiant, fait en sorte que l'espace texte se vide
+    champNom.value = "";
+}
+        </script>
+    </body>
+    

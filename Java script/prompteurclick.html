@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compteur de clics</title>
+    <style>
+
+    </style>
+</head>
+<body>
+        <button id="clicButton" onclick="incremente()">Cliquez-moi</button>
+    </div>
+
+    <div id="compteur">Nombre de clics : </div>
+
+    <script>
+        let compteur = 0;
+
+        const bouton = document.getElementById("clicButton");
+        const affichageClick = document.getElementById("compteur");
+        
+        function incremente() {
+        compteur++;
+        document.getElementById("compteur").textContent = `Nombre de clics : ${compteur}`;
+                                            // modifier le texte à l'intérieur d'un élément HTML.
+        }
+    </script>
+
+</body>
+</html>

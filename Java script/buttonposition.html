@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evénements 4</title>
+    <style>
+        .min td img {
+            height: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td colspan="4">
+                <img id="big" height="500px" src="./photopourtab/1.jpg" alt="Photo principale">
+            </td>
+        </tr>
+        <tr class="min">
+            <td><img src="./photopourtab/1.jpg" alt="Miniature 1" onclick="ok(this.src)"></td>
+            <td><img src="./photopourtab/2.jpg" alt="Miniature 2" onclick="ok(this.src)"></td>
+            <td><img src="./photopourtab/3.jpg" alt="Miniature 3" onclick="ok(this.src)"></td>
+            <td><img src="./photopourtab/4.jpg" alt="Miniature 4" onclick="ok(this.src)"></td>
+        </tr>
+    </table>
+
+    <script>
+        function ok(src) {
+            document.getElementById("big").src = src;
+        }
+    </script>
+
+</body>
+</html>
