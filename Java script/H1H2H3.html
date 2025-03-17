@@ -13,13 +13,21 @@
 </STYle>
 <body>
 
+<form action="">
+<input type="prenom" id="prenom"><br>  
+</form>
+<input type="choix" id="choix"><br>  
 
-<input type="text" id="text" readonly><br>  
-<!-- readyonly = L'utilisateur ne peut pas modifier la valeur de ce champ mais voit -->
 
 </body>
 </head>
-<script src="./H1H2H3.js">
+<script>
+    function go() {
+    var choix = document.getElementById("choix").value;
+    var prenom = document.getElementById("prenom").value;
+    document.getElementById("res").innerHTML = "<" + choix + ">" + prenom + "</" + choix + ">";
+}
+
 </script>
 
 </html>
