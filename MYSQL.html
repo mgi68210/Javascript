@@ -23,6 +23,10 @@
 
         main {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Header */
@@ -38,7 +42,14 @@
         nav {
             display: flex;
             align-items: center;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .nav-links {
+            display: flex;
             gap: 20px;
+            margin-left: auto;
         }
 
         nav a {
@@ -58,7 +69,6 @@
 
         /* Section HTML/CSS */
         .figma-section {
-            margin-top: 30px;
             text-align: center;
         }
 
@@ -70,8 +80,7 @@
         .figma-gallery {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            align-items: center;
         }
 
         .figma-project {
@@ -142,7 +151,7 @@
             <a href="index.html" class="lien-icone">
                 <img src="images/logo.png" alt="Logo Portfolio">
             </a>
-            <div>
+            <div class="nav-links">
                 <a href="index.html">Accueil</a>
                 <a href="a-propos.html">À propos</a>
                 <a href="portfolio.html">Portfolio</a>
@@ -152,7 +161,7 @@
 
     <main>
         <section class="figma-section">
-            <h2>HTML CSS</h2>
+            <h2>MYSQL</h2>
             <div class="figma-gallery">
                 <div class="figma-project">
                     <img src="./Icons/mysql1.png" alt="Projet MySQL">
