@@ -28,14 +28,26 @@
         }
 
         /* Galerie Figma en flex pour aligner les projets horizontalement */
-        .figma-gallery {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px; /* Espacement entre les projets */
-            flex-wrap: wrap; /* Permet de revenir à la ligne sur les petits écrans */
-            margin: 0; /* Éviter la marge par défaut autour des éléments */
-        }
+/* Organisation en deux colonnes de 4 projets */
+/* Organisation en deux lignes de 4 projets */
+.figma-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Quatre colonnes */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Réduction de la taille des images */
+.figma-project img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+}
+
+
 
         .figma-project {
             display: flex;
