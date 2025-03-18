@@ -8,6 +8,114 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS - style.css */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Manrope', sans-serif;
+      background-color: #120a13;
+      color: #f9f8ff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    header, footer {
+      background-color: #ffffff;
+      padding: 20px;
+      width: 100%;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    nav div a {
+      margin: 0 15px;
+      color: #242424;
+      text-decoration: none;
+    }
+    
+    nav div a:hover {
+      text-decoration: underline;
+    }
+    
+    h1 {
+      font-size: 3.5em;
+      font-family: 'Montserrat', sans-serif;
+      color: #edbff7;
+      margin-bottom: 20px;
+    }
+    
+    .accueil-photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 40px 0;
+    }
+    
+    .photo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 220px;
+      height: 220px;
+      background-color: white;
+      padding: 5px;
+      border-radius: 50%;
+    }
+    
+    .portrait {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+          /* Footer */
+          footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px; /* Un peu de marge autour */
+            background-color: #f8f8f8; /* Ou toute autre couleur de fond que tu souhaites */
+            border-top: 1px solid #ddd; /* Ligne de séparation */
+        }
+    
+        footer img {
+            width: 30px; /* Taille du logo réduite à la même taille que les icônes */
+            height: 30px;
+        }
+    
+        footer div {
+            display: flex;
+            justify-content: flex-end; /* Aligne les icônes à droite */
+            gap: 20px; /* Espacement entre les icônes */
+        }
+    
+        .lien-icone {
+            margin: 0;
+        }
+    
+        .lien-icone img {
+            width: 30px; /* Taille des icônes */
+            height: 30px;
+            transition: opacity 0.3s ease;
+        }
+    
+        .lien-icone img:hover {
+            opacity: 0.7; /* Légère transparence au survol */
+        }
+    </style>   
 </head>
 
 <body>

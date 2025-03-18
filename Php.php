@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 //Exercice 1
 
 $prenom ="Marie";
@@ -135,7 +135,7 @@ switch ($jour) {
         echo "Dimanche";
         break;
     default:
-        echo "Jour introuvable";
+        echo "Jour introuvable<br>";
         break;
 }
 
@@ -145,5 +145,119 @@ switch ($jour) {
 
 
 ?>
- -->
+
+<?php
+// Exercice 8
+// Utilise une boucle for pour afficher les nombres de 1 à 10 sur la même ligne, séparés par un espace.
+for ($i = 1; $i <= 10; $i++) {
+    echo $i . " ";
+}
+
+
+//Exercice 9 
+// Utilise une boucle for pour calculer la somme des nombres de 1 à 100. Affiche le résultat de cette somme.
+
+
+$somme = 0;
+
+for ($i = 1; $i <= 100; $i++) {
+    $somme += $i; 
+}
+
+echo "<br>La somme des nombres de 1 à 100 est : " . $somme;
+
+
+
+
+//Exercice 10
+// 1) Crée une variable $nombre et assigne-lui un nombre entier. Utilise une boucle for pour afficher la table de multiplication de ce nombre.
+
+
+
+$nombre = 5; 
+
+echo "<br>Table de multiplication de " . $nombre . " :<br>";
+
+for ($i = 1; $i <= 10; $i++) {
+    echo $nombre . " x " . $i . " = " . ($nombre * $i) . "<br>";
+}
+
+
+//Exercice 11
+//Utilise une boucle for pour afficher les nombres entre 1 et 50 qui sont divisibles par 3. Affiche chaque nombre sur une nouvelle ligne.```
+
+for ($i = 1; $i <= 50; $i++) {
+    if ($i % 3 == 0) { 
+        echo $i . "<br> ";
+    }
+}
+?>
+
+
+<?php
+// Exercice 12 
+// Utilise une boucle while pour calculer la somme des nombres de 1 à 150. Affiche la somme à la fin.
+
+
+
+$somme =0;
+$i = 1;
+
+while ($i <= 150){
+$somme +=$i;
+$i++;
+}
+echo "La somme des nombres de 1 à 150 est : " . $somme ."<br>";
+
+
+//Exercice 13 
+//Utilise une boucle while pour trouver et afficher le premier nombre supérieur à 100 qui est divisible par 7.
+
+$i = 101;
+
+while ($i %7 !=0){
+    $i++;
+}
+
+echo "Le premier nombre supérieur à 100 pouvant être divisé par 7 est :". $i;
+
+
+// Exercice 14
+// Utilise une boucle do... while pour calculer la factorielle du nombre 6. Affiche le résultat de la factorielle (par ex, 6! = 6 * 5 * 4 * 3 * 2 * 1).
+
+$Number=6;
+$factorielle=1;
+$i = $Number;
+
+do{ 
+    $factorielle *= $i;
+    $i --;
+    }
+while ($i > 0);
+
+echo "<br>La factorielle de " .$Number. " est : " .$factorielle. "<br> ";
+
+
+//Exercice 15 
+// Utilise une boucle for pou afficher les nombres 
+// de 1 à 20. Sauter les multiples de 4 (c'est-à-dire ne pas les afficher).
+
+
+for ($i =1; $i <=20 ; $i++)
+if ($i % 4 == 0){
+    continue; // On supprime les multiples de 4
+}
+echo $i . "<br> ";
+
+//Exercice 16
+// Utilise une boucle for pour parcourir les nombre de 1 à 100. Dès qu'un nombre 
+// divisible par 3 et par 5 est trouvé, affiche-le et arrête la boucle.
+for ($i =1; $i<=100; $i++)
+if ($i % 3 == 0 && $i % 5 == 0) {
+    echo "Le premier nombre divisible par 3 et 5 est : " . $i;
+    break;
+}
+
+?>
+
 
