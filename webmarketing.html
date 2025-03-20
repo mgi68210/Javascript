@@ -101,7 +101,6 @@
         /* Galerie d'images alignées */
         .figma-gallery {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Quatre colonnes */
             gap: 20px;
             max-width: 900px;
             margin: auto;
@@ -116,12 +115,18 @@
         }
 
         .figma-project img {
-            width: 120px; /* Réduire la taille des images */
-            height: 120px; /* Réduire la taille des images */
-            object-fit: cover;
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-        }
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.figma-project img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
 
         .figma-project a {
             display: block;
@@ -134,6 +139,29 @@
 
         .figma-project a:hover {
             text-decoration: underline;
+        }
+
+        
+        /* UXFLOW bien centré */
+        .uxflow-project {
+            grid-column: span 4; /* Étend sur toute la largeur */
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .uxflow-project a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #cfa9e7;
+            color: #120a13;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .uxflow-project a:hover {
+            background-color: #b58ed4;
         }
 
         /* PIED DE PAGE */
@@ -193,42 +221,31 @@
     </header>
 
     <main>
-        <section class="figma-section">
-            <h2>JAVASCRIPT</h2><br>
+        <section>
+            <h1>Mes Compétences</h1>
+        </section>
+
+        <section class="portfolio-section-photos">
+            <h2>web-marketing</h2><br>
             <div class="figma-gallery">
                 <div class="figma-project">
-                    <img src="./Java script/java.png" alt="Projet calculette">
-                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/200boutons.html" target="_blank">Voir le projet</a>
-                </div>
-                <div class="figma-project">
-                    <img src="./Java script/java.png" alt="Projet Images">
-                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/buttonposition.html" target="_blank">Voir le projet</a>
-                </div>
-                <div class="figma-project">
-                    <img src="./Java script/java.png" alt="Projet Confirmation">
-                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/exercice%20BONUS.html" target="_blank">Voir le projet</a>
-                </div>
-                <div class="figma-project">
-                    <img src="./Java script/java.png" alt="Projet Form">
-                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/form.html" target="_blank">Voir le projet</a>
-                </div>
-                <div class="figma-project">
-                    <img src="./Java script/java.png" alt="Projet List course">
-                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/listcourse.html" target="_blank">Voir le projet</a>
-                </div>
+                    <img src="./webmarketing/Camalya-logo.png" alt="Projet calculette">
+                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/200boutons.html" target="_blank"></a>
+                    <a href="./webmarketing/Print.pdf" target="_blank">Print</a>
+                    <a href="./webmarketing/tendances-ss20.pdf" target="_blank">Tendances SS2020</a>
 
-                <div class="figma-project">
-                    <img src="./Java script/java.png" alt="Projet List taches">
-                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/listtaches.html" target="_blank">Voir le projet</a>
-                </div>
-
-                <div class="figma-project">
-                    <img src="./Java script/java.png" alt="Projet prompteur">
-                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/prompteurclick.html" target="_blank">Voir le projet</a>
                 </div>
                 <div class="figma-project">
-                    <img src="./Java script/java.png" alt="Projet prompteur">
-                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/prompteurtableau.html" target="_blank">Voir le projet</a>
+                    <img src="./webmarketing/Defil-logo.png" alt="Projet Images">
+                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/buttonposition.html" target="_blank"></a>
+                </div>
+                <div class="figma-project">
+                    <img src="./webmarketing/Moismont-logo.png" alt="Projet Confirmation">
+                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/exercice%20BONUS.html" target="_blank"></a>
+                </div>
+                <div class="uxflow-project">
+                    <a href="./https://gilotmariepro.wixsite.com/gilot-marie/projets" target="_blank">Projets</a>
+                    <a href="./Apropos/CV Professionnel MG.pdf" class="cta" target="_blank">Portfolio</a>
                 </div>
             </div>
         </section>
