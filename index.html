@@ -10,177 +10,163 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
 
     <style>
-        /* CSS - style.css */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Manrope', sans-serif;
-      background-color: #120a13;
-      color: #f9f8ff;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    header, footer {
-      background-color: #ffffff;
-      padding: 20px;
-      width: 100%;
-    }
-    
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    nav div a {
-      margin: 0 15px;
-      color: #242424;
-      text-decoration: none;
-    }
-    
-    nav div a:hover {
-      text-decoration: underline;
-    }
-    
-    h1 {
-      font-size: 3.5em;
-      font-family: 'Montserrat', sans-serif;
-      color: #edbff7;
-      margin-bottom: 20px;
-    }
-    
-    .accueil-photo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 40px 0;
-    }
-    
-    .photo-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 220px;
-      height: 220px;
-      background-color: white;
-      padding: 5px;
-      border-radius: 50%;
-    }
-    
-    .portrait {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-    
-          /* Footer */
-          footer {
+        /* Réinitialisation des marges et paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Structure générale */
+        html, body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Manrope', sans-serif;
+            background-color: #120a13;
+            color: #f9f8ff;
+            text-align: center;
+        }
+
+        /* HEADER - Fixe en haut */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 15px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px; /* Un peu de marge autour */
-            background-color: #f8f8f8; /* Ou toute autre couleur de fond que tu souhaites */
-            border-top: 1px solid #ddd; /* Ligne de séparation */
+            max-width: 1200px;
+            margin: auto;
         }
-    
+
+        nav img {
+            height: 50px;
+        }
+
+        nav div {
+            display: flex;
+        }
+
+        nav div a {
+            margin: 0 15px;
+            color: #242424;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav div a:hover {
+            text-decoration: underline;
+        }
+
+        /* ESPACE SOUS L'EN-TÊTE POUR QUE LE CONTENU NE SOIT PAS CACHÉ */
+        main {
+            flex: 1;
+            margin-top: 80px; /* Évite le chevauchement avec le header */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* TITRE */
+        h1 {
+            font-size: 3.5em;
+            font-family: 'Montserrat', sans-serif;
+            color: #edbff7;
+            margin-bottom: 20px;
+        }
+
+        /* INTRODUCTION */
+        .accueil-introduction p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .cta {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #edbff7;
+            color: #120a13;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .cta:hover {
+            background-color: #d49ad6;
+        }
+
+        /* PHOTO DE PRÉSENTATION */
+        .accueil-photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 210px;  /* Réduction de la taille globale */
+    height: 210px;
+    background-color: white;
+    padding: 10px;  /* Réduction du padding pour affiner le cercle blanc */
+    border-radius: 50%;
+}
+
+.portrait {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid transparent;  /* Crée un espace subtil sans ajouter d'élément visuel */
+}
+
+        /* PIED DE PAGE - Toujours en bas */
+        footer {
+            width: 100%;
+            background-color: #f8f8f8;
+            padding: 10px 20px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
         footer img {
-            width: 30px; /* Taille du logo réduite à la même taille que les icônes */
+            width: 30px;
             height: 30px;
         }
-    
+
         footer div {
             display: flex;
-            justify-content: flex-end; /* Aligne les icônes à droite */
-            gap: 20px; /* Espacement entre les icônes */
+            gap: 20px;
         }
-    
-        .lien-icone {
-            margin: 0;
-        }
-    
+
         .lien-icone img {
-            width: 30px; /* Taille des icônes */
+            width: 30px;
             height: 30px;
             transition: opacity 0.3s ease;
         }
-    
+
         .lien-icone img:hover {
-            opacity: 0.7; /* Légère transparence au survol */
+            opacity: 0.7;
         }
-    
-    
-            body {
-                text-align: center;
-                font-family: 'Manrope', sans-serif;
-            }
-    
-            .portfolio-section-photos {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-    
-            /* Centrer l'image d'introduction */
-            .introduction-img {
-                width: 250px;
-                height: auto;
-                border-radius: 50%;
-                margin-bottom: 20px;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            }
-    
-            /* Galerie d'images alignées */
-            .image-gallery {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-items: center;
-                gap: 20px;
-                max-width: 900px;
-                margin: auto;
-            }
-    
-            .lien-conteneur-photo {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-decoration: none;
-                color: black;
-            }
-    
-            .image-container {
-                width: 120px;
-                height: 120px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 10px;
-                overflow: hidden;
-                background: #f8f8f8;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-                padding: 10px;
-            }
-    
-            .image-container img {
-                width: 100%;
-                height: auto;
-                border-radius: 5px;
-            }
-    
-            .photo-hover {
-                margin-top: 10px;
-                font-weight: bold;
-            }
-        </style>
+    </style>
 </head>
 
 <body>
@@ -189,28 +175,30 @@
             <img src="images/logo.png" alt="Logo Marie Gilot">
             <div>
                 <a href="index.html">Accueil</a>
+                <a href="portfolio.html">Projets web</a>
+                <a href="portfolio.html">Projets web-marketing</a>
+                <a href="portfolio.html">Projets personnel</a>
                 <a href="a-propos.html">À propos</a>
-                <a href="portfolio.html">Portfolio</a>
             </div>
         </nav>
     </header>
-    
+
     <main>
         <section class="accueil-introduction">
             <div>
                 <h1>Marie Gilot</h1>
                 <p>Là où le <em>professionnalisme</em> rencontre la <em>passion</em>. Depuis plus de cinq ans, j’exerce mon métier avec enthousiasme, capturant l’essence de chaque instant.</p>
-                <a href="portfolio.html" class="cta">UN PROJET ? ÉCRIVEZ-MOI</a>
+                <a href="portfolio.html" class="cta">Mes projets web</a>
             </div>
         </section>
-        
+
         <section class="accueil-photo">
             <div class="photo-container">
                 <img class="portrait" src="./images/MarieGilot.png.avif" alt="Portrait Marie Gilot">
             </div>
         </section>
     </main>
-    
+
     <footer>
         <img src="images/logo.png" alt="Logo Marie Gilot">
         <div>

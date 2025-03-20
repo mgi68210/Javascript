@@ -10,56 +10,123 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Structure générale */
+        html,
         body {
-            text-align: center;
-            font-family: 'Manrope', sans-serif;
-            margin: 0; /* Enlever tout écart possible au niveau du body */
-        }
-
-        /* Section Figma */
-        .figma-section {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .figma-section h2 {
-            font-size: 2em;
-            margin-bottom: 15px;
-        }
-
-        /* Galerie Figma en flex */
-        .figma-gallery {
+            height: 100%;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            font-family: 'Manrope', sans-serif;
+            background-color: #120a13;
+            color: #f9f8ff;
+            text-align: center;
+        }
+
+        /* HEADER - Fixe en haut */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 15px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 5px; /* Réduction de l'espace entre les images */
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        nav img {
+            height: 50px;
+        }
+
+        nav div {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav div a {
+            margin: 0 15px;
+            color: #242424;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav div a:hover {
+            text-decoration: underline;
+        }
+
+        /* ESPACE SOUS L'EN-TÊTE POUR QUE LE CONTENU NE SOIT PAS CACHÉ */
+        main {
+            flex: 1;
+            margin-top: 80px; /* Évite le chevauchement avec le header */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .portfolio-section-photos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Centrer l'image d'introduction */
+        .introduction-img {
+            width: 250px;
             max-width: 100%;
-            padding: 10px;
-            flex-wrap: wrap; /* Permet le retour à la ligne si l'écran est trop petit */
-            margin: 0; /* Éviter la marge par défaut autour des éléments */
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Galerie d'images alignées */
+        .figma-gallery {
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
         }
 
         .figma-project {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            width: 220px; /* Taille uniforme des projets */
-            margin: 0; /* On enlève la marge pour un alignement parfait */
+            align-items: center; /* Centrer les éléments horizontalement */
+            justify-content: center; /* Centrer les éléments verticalement */
+            text-align: center;
+            max-width: 100%;  /* Empêche la largeur d'aller au-delà du parent */
         }
 
         .figma-project img {
-            width: 100%;
-            height: auto;
+            max-width: 100%; /* Laisser l'image se redimensionner naturellement */
+            height: auto;  /* Maintenir les proportions de l'image */
+            object-fit: cover;  /* Si l'image dépasse, l'ajuster sans déformation */
             border-radius: 5px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
         }
 
         .figma-project a {
             display: block;
-            margin-top: 5px;
-            font-size: 0.9em;
+            margin-top: 10px;
+            font-size: 1.2em; /* Augmenter la taille du texte */
             font-weight: bold;
-            color: #945da1;
+            color: #cfa9e7; /* Violet plus clair */
             text-decoration: none;
         }
 
@@ -67,39 +134,44 @@
             text-decoration: underline;
         }
 
-        /* Footer */
+        /* PIED DE PAGE */
         footer {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            border-top: 1px solid #ddd;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px; /* Un peu de marge autour */
-            background-color: #f8f8f8; /* Ou toute autre couleur de fond que tu souhaites */
-            border-top: 1px solid #ddd; /* Ligne de séparation */
+            position: relative;
+            color: white;
         }
 
         footer img {
-            width: 30px; /* Taille du logo réduite à la même taille que les icônes */
+            width: 30px;
             height: 30px;
         }
 
         footer div {
             display: flex;
-            justify-content: flex-end; /* Aligne les icônes à droite */
-            gap: 20px; /* Espacement entre les icônes */
+            gap: 20px;
         }
 
         .lien-icone {
-            margin: 0;
+            display: flex;
+            gap: 15px;
         }
 
         .lien-icone img {
-            width: 30px; /* Taille des icônes */
+            width: 30px;
             height: 30px;
-            transition: opacity 0.3s ease;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease, opacity 0.3s ease;
         }
 
         .lien-icone img:hover {
-            opacity: 0.7; /* Légère transparence au survol */
+            filter: grayscale(0%) brightness(70%) sepia(1) hue-rotate(-30deg) saturate(500%);
+            opacity: 1;
         }
     </style>
 </head>
@@ -118,19 +190,20 @@
         </nav>
     </header>
 
-    <!-- Section Figma -->
-    <section class="figma-section">
-        <h2>HTML CSS JS</h2>
-        <div class="figma-gallery">
-            <div class="figma-project">
-                <img src="./Projet figma/Quatrepatte.png" alt="Projet Figma Quatrepatte">
-                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/ECF_Quatre_Pattes/blob/main/index.html" target="_blank">Voir le projet</a>
+    <main>
+        <section class="figma-section">
+            <h2>HTML CSS JS</h2>
+            <div class="figma-gallery">
+                <div class="figma-project">
+                    <img src="./Projet figma/Quatrepatte.png" alt="Projet Figma Quatrepatte">
+                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/ECF_Quatre_Pattes/blob/main/index.html" target="_blank">Voir le projet</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <img src="images/logo.png" alt="Logo Robbie Lens">
+        <img src="images/logo.png" alt="Logo Marie Gilot">
         <div>
             <a target="_blank" href="https://www.linkedin.com/in/marie-gilot-633955136/" class="lien-icone">
                 <img src="./images/linkedin.png" alt="Logo Linkedin">

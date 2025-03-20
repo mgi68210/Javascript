@@ -10,67 +10,125 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        body {
-            text-align: center;
-            font-family: 'Manrope', sans-serif;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Section Figma */
-        .figma-section {
-            margin-top: 30px;
+        /* Structure générale */
+        html,
+        body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Manrope', sans-serif;
+            background-color: #120a13;
+            color: #f9f8ff;
             text-align: center;
         }
 
-        .figma-section h2 {
-            font-size: 2em;
-            margin-bottom: 15px;
+        /* HEADER - Fixe en haut */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 15px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
 
-        /* Galerie Figma en flex pour aligner les projets horizontalement */
-/* Organisation en deux colonnes de 4 projets */
-/* Organisation en deux lignes de 4 projets */
-.figma-gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Quatre colonnes */
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-}
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-/* Réduction de la taille des images */
-.figma-project img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
-}
+        nav img {
+            height: 50px;
+        }
+
+        nav div {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav div a {
+            margin: 0 15px;
+            color: #242424;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav div a:hover {
+            text-decoration: underline;
+        }
+
+        /* ESPACE SOUS L'EN-TÊTE POUR QUE LE CONTENU NE SOIT PAS CACHÉ */
+        main {
+            flex: 1;
+            margin-top: 80px; /* Évite le chevauchement avec le header */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
 
+
+        .portfolio-section-photos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Centrer l'image d'introduction */
+        .introduction-img {
+            width: 250px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Galerie d'images alignées */
+        .figma-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Quatre colonnes */
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
 
         .figma-project {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 180px; /* Largeur uniforme pour chaque projet */
-            margin: 0;
+            text-align: center;
         }
 
         .figma-project img {
-            width: 180px; /* Fixe la largeur des images à 180px */
-            height: 180px; /* Fixe la hauteur des images à 180px */
-            object-fit: cover; /* Assure que l'image remplit le conteneur sans être déformée */
+            width: 120px; /* Réduire la taille des images */
+            height: 120px; /* Réduire la taille des images */
+            object-fit: cover;
             border-radius: 5px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
         }
 
         .figma-project a {
             display: block;
-            margin-top: 5px;
-            font-size: 0.9em;
+            margin-top: 10px;
+            font-size: 1.2em; /* Augmenter la taille du texte */
             font-weight: bold;
-            color: #945da1;
+            color: #cfa9e7; /* Violet plus clair */
             text-decoration: none;
         }
 
@@ -78,14 +136,17 @@
             text-decoration: underline;
         }
 
-        /* Footer */
+        /* PIED DE PAGE */
         footer {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            border-top: 1px solid #ddd;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
-            background-color: #f8f8f8;
-            border-top: 1px solid #ddd;
+            position: relative;
+            color: white;
         }
 
         footer img {
@@ -95,22 +156,24 @@
 
         footer div {
             display: flex;
-            justify-content: flex-end;
             gap: 20px;
         }
 
         .lien-icone {
-            margin: 0;
+            display: flex;
+            gap: 15px;
         }
 
         .lien-icone img {
             width: 30px;
             height: 30px;
-            transition: opacity 0.3s ease;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease, opacity 0.3s ease;
         }
 
         .lien-icone img:hover {
-            opacity: 0.7;
+            filter: grayscale(0%) brightness(70%) sepia(1) hue-rotate(-30deg) saturate(500%);
+            opacity: 1;
         }
     </style>
 </head>
@@ -129,49 +192,50 @@
         </nav>
     </header>
 
-    <!-- Section javascript -->
-    <section class="figma-section">
-        <h2>HTML CSS</h2>
-        <div class="figma-gallery">
-            <div class="figma-project">
-                <img src="./Java script/java.png" alt="Projet calculette">
-                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/200boutons.html" target="_blank">Voir le projet</a>
-            </div>
-            <div class="figma-project">
-                <img src="./Java script/java.png" alt="Projet Images">
-                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/buttonposition.html" target="_blank">Voir le projet</a>
-            </div>
-            <div class="figma-project">
-                <img src="./Java script/java.png" alt="Projet Confirmation">
-                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/exercice%20BONUS.html" target="_blank">Voir le projet</a>
-            </div>
-            <div class="figma-project">
-                <img src="./Java script/java.png" alt="Projet Form">
-                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/form.html" target="_blank">Voir le projet</a>
-            </div>
-            <div class="figma-project">
-                <img src="./Java script/java.png" alt="Projet List course">
-                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/listcourse.html" target="_blank">Voir le projet</a>
-            </div>
+    <main>
+        <section class="figma-section">
+            <h2>JAVASCRIPT</h2><br>
+            <div class="figma-gallery">
+                <div class="figma-project">
+                    <img src="./Java script/java.png" alt="Projet calculette">
+                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/200boutons.html" target="_blank">Voir le projet</a>
+                </div>
+                <div class="figma-project">
+                    <img src="./Java script/java.png" alt="Projet Images">
+                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/buttonposition.html" target="_blank">Voir le projet</a>
+                </div>
+                <div class="figma-project">
+                    <img src="./Java script/java.png" alt="Projet Confirmation">
+                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/exercice%20BONUS.html" target="_blank">Voir le projet</a>
+                </div>
+                <div class="figma-project">
+                    <img src="./Java script/java.png" alt="Projet Form">
+                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/form.html" target="_blank">Voir le projet</a>
+                </div>
+                <div class="figma-project">
+                    <img src="./Java script/java.png" alt="Projet List course">
+                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/listcourse.html" target="_blank">Voir le projet</a>
+                </div>
 
-            <div class="figma-project">
-                <img src="./Java script/java.png" alt="Projet List taches">
-                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/listtaches.html" target="_blank">Voir le projet</a>
-            </div>
+                <div class="figma-project">
+                    <img src="./Java script/java.png" alt="Projet List taches">
+                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/listtaches.html" target="_blank">Voir le projet</a>
+                </div>
 
-            <div class="figma-project">
-                <img src="./Java script/java.png" alt="Projet prompteur">
-                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/prompteurclick.html" target="_blank">Voir le projet</a>
+                <div class="figma-project">
+                    <img src="./Java script/java.png" alt="Projet prompteur">
+                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/prompteurclick.html" target="_blank">Voir le projet</a>
+                </div>
+                <div class="figma-project">
+                    <img src="./Java script/java.png" alt="Projet prompteur">
+                    <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/prompteurtableau.html" target="_blank">Voir le projet</a>
+                </div>
             </div>
-            <div class="figma-project">
-                <img src="./Java script/java.png" alt="Projet prompteur">
-                <a href="https://html-preview.github.io/?url=https://github.com/mgi68210/Javascript/blob/main/Java%20script/prompteurtableau.html" target="_blank">Voir le projet</a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <img src="images/logo.png" alt="Logo Robbie Lens">
+        <img src="images/logo.png" alt="Logo Marie Gilot">
         <div>
             <a target="_blank" href="https://www.linkedin.com/in/marie-gilot-633955136/" class="lien-icone">
                 <img src="./images/linkedin.png" alt="Logo Linkedin">
