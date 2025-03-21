@@ -19,6 +19,7 @@
         /* Structure générale */
         html, body {
             height: 100%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             font-family: 'Manrope', sans-serif;
@@ -77,11 +78,30 @@
             min-width: 100%;
         }
 
-        /* Section FIGMA */
-        .figma-section h2 {
-            margin-bottom: 30px;
-            font-size: 2.2em;
-        }
+        .figma-section {
+    padding-top: 140px; /* Assure que le titre ne soit pas caché sous le header */
+    text-align: center; /* Centre le texte */
+    width: 100%;
+}
+
+.figma-section h2 {
+    color: white; /* Rend le texte visible sur un fond sombre */
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+
+.figma-project a {
+    color: #EB8FFF; /* Couleur du texte */
+    text-decoration: none; /* Retire le soulignement par défaut */
+    font-weight: bold; /* Rend le texte plus visible */
+    transition: text-decoration 0.3s ease; /* Ajoute une transition fluide */
+}
+
+.figma-project a:hover {
+    text-decoration: underline 3px #EB8FFF; /* Ajoute un soulignement épais de la couleur désirée */
+}
+
 
         /* Galerie de projets */
         .figma-gallery {
